@@ -1,0 +1,1181 @@
+<!DOCTYPE html> operador crear
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="csrf-token" content="H8hFwsPppChdyo32g03h4U6vcYJrYsXxwFpfkBeu">
+    <title>SmartCompany - Listado Operadoras</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="icon" type="image/x-icon" href="https://smartcompany.neering.cl/favicon.png" />
+    <!-- Bootstrap 3.3.5 -->
+    <link media="all" type="text/css" rel="stylesheet" href="https://smartcompany.neering.cl/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://smartcompany.neering.cl/css/jquery-ui.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://smartcompany.neering.cl/css/font-awesome.min.css">
+    <!-- Ionicons -->
+
+    <link rel="stylesheet" href="https://smartcompany.neering.cl/css/Rubik.css">
+
+    <link rel="stylesheet" href="https://smartcompany.neering.cl/css/ionicons.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="https://smartcompany.neering.cl/css/datatables.min.css" />
+    <!-- Theme style -->
+    <link media="all" type="text/css" rel="stylesheet" href="https://smartcompany.neering.cl/css/AdminLTE.min.css">
+
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link media="all" type="text/css" rel="stylesheet" href="https://smartcompany.neering.cl/css/skin-red-light.min.css">
+
+    <link media="all" type="text/css" rel="stylesheet" href="https://smartcompany.neering.cl/css/fullcob.css">
+
+    <link media="all" type="text/css" rel="stylesheet" href="https://smartcompany.neering.cl/css/jquery.timepicker.css">
+
+    <link media="all" type="text/css" rel="stylesheet" href="https://smartcompany.neering.cl/css/nanobar.css">
+
+    <link media="all" type="text/css" rel="stylesheet" href="https://smartcompany.neering.cl/css/canvasloader.css">
+
+        <link rel="stylesheet" href="https://smartcompany.neering.cl/plugins/toastr/toastr.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="hold-transition skin-red-light sidebar-mini">
+
+    	<div class="modal fade" id="modal-codigos-operadora">
+		<div class="modal-dialog" role="document">
+			<form id="form-codigos-operadora" action="#" method="POST" data-operadora="">
+				<input type="hidden" name="_token" value="H8hFwsPppChdyo32g03h4U6vcYJrYsXxwFpfkBeu">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+							<span class="sr-only">Close</span>
+						</button>
+						<h4 class="modal-title">Códigos de operadora <a href="javascript:void(0)" class="helper" data-toggle="popover" data-placement="bottom"
+							data-content="Los códigos de operadoras se utilizan para identificar a los agentes en los archivos 200/600 de Ripley" data-trigger="hover">
+							<i class="fa fa-question-circle"></i></a>
+						</h4>
+					</div>
+					<div class="modal-body"></div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+						<button type="submit" class="btn btn-info btn-aceptar">Guardar cambios</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+    <div id="baseurl" data-url="https://smartcompany.neering.cl" style="display:none;"></div>
+    <div class="wrapper" style="background-color: white;">
+        <header class="main-header">
+            <nav class="navbar navbar-static-top" role="navigation">
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- Messages: style can be found in dropdown.less-->
+
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <img src="https://smartcompany.neering.cl/img/usuario.svg "
+                            style="margin-right:14px; width: 26px; top: 9px;height: 26px;">
+                        <span class=""
+                            style="width: 143px; height: 19px; margin-right:60px; top:11px; font: normal normal normal 16px/14px Rubik; letter-spacing: 0px; font-weight: bolder;">
+                            Gonzalo Monroy
+                        </span>
+                        
+                        <a href="https://smartcompany.neering.cl/logout" class="btn btn-salir"
+                            style="width: 152px !important; height: 40px !important; background: #0D559D; color: white; border: 0; border-radius: 0px;">Salir</a>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside id="main-sidebar" class="main-sidebar" style="height:100%;;">
+                    <section class="sidebar" style="background-color: #063a6e;">
+    
+    
+    <style>
+        .logo-lg {
+            top: 39px;
+            margin-left: 56px;
+            size: auto;
+            max-width: 104px;
+            max-height: 100px;
+        }
+
+        .logo-custom {
+            padding-top: 20px;
+            height: 140px !important;
+            width: 116px !important;
+        }
+
+        .fa-angle-left:active {}
+
+        .skin-red-light .sidebar-menu>li>a,
+        .skin-red-light .sidebar-menu>li>a {
+            height: 40px;
+            word-break: break-word;
+            white-space: normal;
+        }
+    </style>
+    
+
+    <ul class="sidebar-menu" style="height: 100%">
+        
+        <div class="logo-custom">
+            <span class="logo-lg hidden-xs"><img src="https://smartcompany.neering.cl/img/New-logo.png"></span>
+        </div>
+        
+        <li class="active treeview">
+            <a href="https://smartcompany.neering.cl">
+                <span>Inicio</span></i>
+            </a>
+        </li>
+        
+                    <li class="treeview">
+                <a href="#">
+                    <span>Gestión de Agentes</span>
+                    <i class="fa fa-angle-left pull-right " style="margin-right: 5px;"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li id="agend"><a href="https://smartcompany.neering.cl/gestion/agendamientos"> Agendamientos y compromisos del
+                            día</a></li>
+                    <li><a href="https://smartcompany.neering.cl/gestion/agendamientos-fecha"> Agendamientos por Fecha</a></li>
+                    <li><a href="https://smartcompany.neering.cl/gestion/gestion-campanas"> Gestión de Campañas</a></li>
+                    <li><a href="https://smartcompany.neering.cl/gestion/gestion-campanas/gestion-especifica"> Gestión Específica</a></li>
+                                            
+                        <li><a href="https://smartcompany.neering.cl/gestion/listar"> Listado de Gestiones</a></li>
+                                    </ul>
+            </li>
+                
+        <li class="treeview">
+            <a href="#">
+                                    <span>Consultas y Reportes</span>
+                                <i class="fa fa-angle-left pull-right" style="margin-right: 5px;"></i>
+            </a>
+            <ul class="treeview-menu">
+                
+                                    <li><a href="https://smartcompany.neering.cl/listar-compromisos-operadora/317"> Compromisos
+                            de Pago</a></li>
+                
+                 
+                    <li class="treeview">
+                         
+                            <a href="#"><span>Reportes</span><i class="fa fa-angle-left pull-right"
+                                    style="margin-right: 5px;"></i></a>
+
+                            <ul class="treeview-menu">
+                                <li><a href="https://smartcompany.neering.cl/gestion/cliente-informe"> Campañas</a></li>
+
+                                                                    
+                                    <li><a href="https://smartcompany.neering.cl/gestion/cliente-informe-ult-gestion"> Campañas Ult. Gestión</a>
+                                    </li>
+                                    <li><a href="https://smartcompany.neering.cl/gestion/compromisos-ripley"> Compromisos por Fecha</a>
+                                    </li>
+                                
+                                                                    
+                                    <li><a href="https://smartcompany.neering.cl/gestion/informe-terreno"> Terreno</a></li>
+                                
+                                                                    
+                                    <li><a href="https://smartcompany.neering.cl/reporte-convenios"> Convenios y Compromisos</a></li>
+                                
+                                                                    
+                                    <li><a href="https://smartcompany.neering.cl/reporte-generico"> Genéricos</a></li>
+                                
+                            </ul>
+                                </li>
+        
+         
+            <li class="treeview">
+                                    
+                    <a href="#"><span>Informes</span><i class="fa fa-angle-left pull-right"
+                            style="margin-right: 5px;"></i></a>
+                    <ul class="treeview-menu">
+                        <li><a href="https://smartcompany.neering.cl/informe-recupero"> Recupero por Mes/Año</a></li>
+                        <li><a href="https://smartcompany.neering.cl/cliente-informe-gestiones"> Gestiones Mes/día</a></li>
+                        
+                    </ul>
+                
+
+        </li>
+        
+                    
+            <li class="treeview">
+                <a href="#"><span>Consultas</span><i class="fa fa-angle-left pull-right"
+                        style="margin-right: 5px;"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="https://smartcompany.neering.cl/consulta/gestion-especifica"> Específica</a></li>
+                    <li><a href="https://smartcompany.neering.cl/consulta/gestion-especifica-historico"> Específica (Histórico)</a></li>
+                </ul>
+            </li>
+            
+        
+    </ul>
+    </li>
+
+    
+            <li class="treeview">
+            <a href="#">
+                <span>Indicadores de Gestión</span>
+                <i class="fa fa-angle-left pull-right" style="margin-right: 5px;"></i>
+            </a>
+            <ul class="treeview-menu">
+                
+                <li><a href="https://smartcompany.neering.cl/indicadores/mes-campana-recupero"> Recupero Mes-Campaña</a></li>
+                <li><a href="https://smartcompany.neering.cl/indicadores/mes-ejecutiva-recupero"> Recupero Mes-Ejecutiva</a></li>
+                <li><a href="https://smartcompany.neering.cl/indicadores/mes-gestiones"> Gestiones del Mes</a></li>
+                <li class="treeview">
+                    <a href="#">
+                        <span>Gestiones-Ejecutiva</span>
+                        <i class="fa fa-angle-left pull-right" style="margin-right: 5px;"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="https://smartcompany.neering.cl/indicadores/diario-ejecutiva-gestiones"> Diario</a></li>
+                        <li><a href="https://smartcompany.neering.cl/indicadores/mes-ejecutiva-gestiones"> Mensual</a></li>
+                    </ul>
+                                    <li><a href="https://smartcompany.neering.cl/indicadores/llamadas-voz"> Llamadas de Voz</a></li>
+        </ul>
+    </li>
+
+    
+    <li class="treeview">
+        <a href="#">
+            <span>Campañas</span>
+            <i class="fa fa-angle-left pull-right" style="margin-right: 5px;"></i>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="https://smartcompany.neering.cl/campanas/guiones"> Mantener Guiones</a></li>
+            <li><a href="https://smartcompany.neering.cl/supervisor/campana-crear"> Crear Campaña</a> </li>
+            <li><a href="https://smartcompany.neering.cl/supervisor/reasignar-campana"> Reasignar Campaña</a></li>
+
+                            <li><a href="https://smartcompany.neering.cl/administracion/campana-reasignar-masivo"> Reasignar Campaña Masivo</a></li>
+                <li><a href="https://smartcompany.neering.cl/campanas/desactivar"> Desactivar Campaña</a> </li>
+                    </ul>
+    </li>
+    <li class="treeview">
+        <a href="#">
+            <span>Pagos</span>
+            <i class="fa fa-angle-left pull-right" style="margin-right: 5px;"></i>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="https://smartcompany.neering.cl/pagos/pago-individual">Pago Individual</a></li>
+            <li><a href="https://smartcompany.neering.cl/pagos/pago-masivo">Pago Masivo</a></li>
+            <li><a href="https://smartcompany.neering.cl/pagos/pagos-por-fecha">Reporte por Fecha</a></li>
+        </ul>
+    </li>
+    
+    <li class="treeview">
+        <a href="#">
+            <span>Metas</span>
+            <i class="fa fa-angle-left pull-right" style="margin-right: 5px;"></i>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="https://smartcompany.neering.cl/metas/establecer-meta">Establecer Meta</a></li>
+        </ul>
+    </li>
+
+
+
+    <li class="treeview">
+        <a href="#">
+            <span>Administración</span>
+            <i class="fa fa-angle-left pull-right" style="margin-right: 5px;"></i>
+        </a>
+        <ul class="treeview-menu">
+                            
+                <li class="treeview">
+                    <a href="#"><span>Carga</span><i class="fa fa-angle-left pull-right"
+                            style="margin-right: 5px;"></i></a>
+                    <ul class="treeview-menu">
+                        <li><a href="https://smartcompany.neering.cl/administracion/carga-generica"> Carga Generica</a></li>
+                        <li><a href="https://smartcompany.neering.cl/administracion/carga-masiva"> Masiva</a></li>
+                        <li><a href="https://smartcompany.neering.cl/administracion/carga-masiva-sin-cuotas"> Masiva Sin Cuotas</a>
+                        </li>
+                        <li><a href="https://smartcompany.neering.cl/administracion/carga-masiva-car"> Masiva CAR Ripley</a></li>
+                        <li><a href="https://smartcompany.neering.cl/administracion/carga-masiva-banco-ripley"> Masiva Banco Ripley</a></li>
+                        <li><a href="https://smartcompany.neering.cl/administracion/carga-vicidial"> Vicidial</a></li>
+                        
+                        <li><a href="https://smartcompany.neering.cl/administracion/carga-llamadas-voz"> LLamadas de Voz</a></li>
+                        <li><a href="https://smartcompany.neering.cl/administracion/carga-gestiones-sms"> Carga Gestiones SMS</a></li>
+                        <li><a href="https://smartcompany.neering.cl/administracion/carga-gestiones-mail"> Carga Gestiones Mail</a>
+                        </li>
+                        <li><a href="https://smartcompany.neering.cl/administracion/carga-telefonos-ripley"> Carga Teléfonos Ripley</a></li>
+                        <li><a href="https://smartcompany.neering.cl/administracion/carga-direcciones-ripley"> Carga Direcciones Ripley</a></li>
+                        <li><a href="https://smartcompany.neering.cl/administracion/carga-judicial-asignaciones"> Carga Judicial
+                                Asignaciones</a></li>
+                        <li><a href="https://smartcompany.neering.cl/administracion/inyeccion-gestiones">Inyección de Gestiones</a>
+                        </li>
+                        <li><a href="https://smartcompany.neering.cl/administracion/gestiones-robot"> Gestiones Robot</a></li>
+                        <li><a href="https://smartcompany.neering.cl/supervisor/inhibicion-deudor"> Inhibición Deudor</a></li>
+                        <li><a href="https://smartcompany.neering.cl/administracion/arboles-gestiones"> Carga arboles </a></li>
+                    </ul>
+                </li>
+                                        <li class="treeview">
+                    <a href="#"><span>Descargar</span><i class="fa fa-angle-left pull-right"
+                            style="margin-right: 5px;"></i></a>
+                    <ul class="treeview-menu">
+                        <li><a href="https://smartcompany.neering.cl/administracion/ripley"> Ripley 600-200</a></li>
+                        <li><a href="https://smartcompany.neering.cl/administracion/lista-vicidial"> Lista Vicidial</a></li>
+                        <li><a href="https://smartcompany.neering.cl/administracion/consolidados-gestiones"> Consolidado de Gestiones</a></li>
+                        <li><a href="https://smartcompany.neering.cl/reporte-gestiones-robot"> Gestiones Robot</a></li>
+                        
+                    </ul>
+                </li>
+            
+            <li class="treeview">
+                <a href="#"><span>Asignar</span><i class="fa fa-angle-left pull-right"
+                        style="margin-right: 5px;"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="https://smartcompany.neering.cl/supervisor/asignar-cobrador-terreno"> Cobrador en Terreno</a></li>
+                    <li><a href="https://smartcompany.neering.cl/supervisor/asignar-cobrador-masivo"> Cobrador en Terreno
+                            Masivo</a></li>
+                </ul>
+            </li>
+
+                            
+                <li class="treeview">
+                    <a href="#"><span>Reasignar</span><i class="fa fa-angle-left pull-right"
+                            style="margin-right: 5px;"></i></a>
+                    <ul class="treeview-menu">
+                        <li><a href="https://smartcompany.neering.cl/supervisor/reasignar-operadora"> Operadora</a></li>
+                        <li><a href="https://smartcompany.neering.cl/supervisor/reasignar-operadora-masivo"> Operadora Masivo</a>
+                        </li>
+                    </ul>
+                </li>
+                        <li><a href="https://smartcompany.neering.cl/guiones"> Guiones</a></li>
+            <li><a href="https://smartcompany.neering.cl/supervisor/cliente/listar"> Clientes</a></li>
+            <li><a href="https://smartcompany.neering.cl/supervisor/operadora/listar"> Operadora</a></li>
+            <li><a href="https://smartcompany.neering.cl/supervisor/cobrador/listar"> Cobrador</a></li>
+                            <li><a href="https://smartcompany.neering.cl/administracion/gestion-canal"> Gestión por canal</a></li>
+                <li><a href="https://smartcompany.neering.cl/administracion/telefonos-bloqueados"> Teléfonos Bloqueados</a></li>
+                <li><a href="https://smartcompany.neering.cl/administracion/inhibiciones"> Inhibiciones</a></li>
+                <li><a href="https://smartcompany.neering.cl/calculo-comisiones"> Calculo decomisiones</a></li>
+                <li><a href="https://smartcompany.neering.cl/administracion-ofertas"> Módulo Ofertas</a></li>
+            
+
+            
+            
+        </ul>
+    </li>
+            </ul>
+
+</section>
+
+                            
+        <!-- /.sidebar -->
+        <div>
+            <footer class="foot-sidebar" style="      right: 0px; bottom: 0px; position:fixed">
+                <img src="https://smartcompany.neering.cl/img/copy.png" class="copy" alt="User Image">
+            </footer>
+        </div>
+    </aside>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+          <section class="content-header">
+          <h1>
+            Listado de Operadoras <a class="btn btn-primary pull-right" href="https://smartcompany.neering.cl/supervisor/operadora/agregar">Agregar Operadora</a>
+          </h1>
+
+        </section>
+  <section class="content">
+    
+ 
+  <div class="row">
+    <div class="col-sm-12 col-xs-12">
+      <div class="box">
+        <div class="box-header">
+
+          <div class="input-group" style="width: 300px;">
+            <input type="text" id="nombre" name="table_search" class="form-control input-sm pull-left" placeholder="Buscar">
+            <div class="input-group-btn">
+              <button id="buscar" class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+            </div>
+          </div>
+        </div><!-- /.box-header -->
+      <div class="box-body">
+            <table class="table table-responsive table-bordered table-hover" style="width:50%">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Detalles</th>
+            <th>Códigos</th>
+          </tr>
+          <tbody id="body">
+                          <tr>
+                <td >Abel Andrade</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/290"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="290">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >abimael edrei jimenez torrealba</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/455"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="455">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Abiud salomon ali sepulveda</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/473"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="473">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Adrea Alexandra Ochoa Terán</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/552"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="552">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Adrian Said Acosta Montenegro</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/325"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="325">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Adriana Palacios</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/590"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="590">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Alba Martinez</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/724"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="724">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Alcira dhameliz busnego </td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/429"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="429">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Alejandro armas</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/397"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="397">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Alejandro Borrero</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/291"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="291">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Alejandro Hernandez Marín</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/399"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="399">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Alexander Acevedo Ramírez</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/354"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="354">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Alexander Jesus González Vargas</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/385"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="385">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Alexander Perez</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/437"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="437">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Alfredo alejandro yaguaramay manzanilla</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/367"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="367">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Amanda Valentina Borges Ledo</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/448"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="448">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Ana Maturana</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/449"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="449">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Ana Rojas</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/585"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="585">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Ana Tovar</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/565"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="565">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Anaid Rosas</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/682"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="682">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Andrea Avendaño</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/538"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="538">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Andrea Castillo</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/332"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="332">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Andrea Martinez</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/649"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="649">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Andrea Ordoñez</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/566"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="566">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Andrea Torrealba</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/716"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="716">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Andres Acosta</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/641"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="641">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Andres Flores</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/504"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="504">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Andres Sulbaran Seco</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/718"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="718">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Andry Alexander Guerrero Perez</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/363"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="363">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Andy Jesús Carmona mejia</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/326"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="326">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Ángel Josue Aguilera Galea</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/304"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="304">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Angel Peña</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/681"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="681">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Angelis Febres</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/577"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="577">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >angelis yocelle perez delgado</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/444"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="444">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Angelo Medina Morillo</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/300"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="300">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Angelo Medina Morillo</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/322"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="322">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Anilu Gonzalez</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/685"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="685">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Anllely Jusy Medina Morillo</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/301"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="301">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Anthoni José Griman Rincones</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/503"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="503">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >anthony luis delgado rengifo</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/471"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="471">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Antonio Mendoza Betancourt</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/722"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="722">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Antonio moreno</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/432"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="432">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Anyarith Wilmara Colmenares</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/339"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="339">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Anyiney Casanas</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/658"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="658">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Argelis Armas </td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/398"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="398">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Argenis Alexander Ynfante Rodríguez</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/485"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="485">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Ariana Briceño</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/580"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="580">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Arianny Ramirez</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/556"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="556">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Armando Torres</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/670"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="670">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                          <tr>
+                <td >Ashely Portillo Chique</td>
+                <td><a href="https://smartcompany.neering.cl/supervisor/operadora/editar/721"><i class="fa fa-eye"></i> Detalles</a></td>
+                <td><a href="javascript:void(0)" class="btn-ver-codigos" data-operadora="721">
+                  <i class="fa fa-eye"></i> Ver
+                  
+                </a></td>
+              </tr>
+                      </tbody>
+        </thead>
+      </table>
+      <ul class="pagination">
+        <!-- Previous Page Link -->
+                    <li class="disabled"><span>&laquo;</span></li>
+        
+        <!-- Pagination Elements -->
+                    <!-- "Three Dots" Separator -->
+            
+            <!-- Array Of Links -->
+                                                                        <li class="active"><span>1</span></li>
+                                                                                <li><a href="https://smartcompany.neering.cl/supervisor/operadora/listar?page=2">2</a></li>
+                                                                                <li><a href="https://smartcompany.neering.cl/supervisor/operadora/listar?page=3">3</a></li>
+                                                                                <li><a href="https://smartcompany.neering.cl/supervisor/operadora/listar?page=4">4</a></li>
+                                                                                <li><a href="https://smartcompany.neering.cl/supervisor/operadora/listar?page=5">5</a></li>
+                                                                                <li><a href="https://smartcompany.neering.cl/supervisor/operadora/listar?page=6">6</a></li>
+                                                                                <li><a href="https://smartcompany.neering.cl/supervisor/operadora/listar?page=7">7</a></li>
+                                                                                <li><a href="https://smartcompany.neering.cl/supervisor/operadora/listar?page=8">8</a></li>
+                                                                                <li><a href="https://smartcompany.neering.cl/supervisor/operadora/listar?page=9">9</a></li>
+                                                        
+        <!-- Next Page Link -->
+                    <li><a href="https://smartcompany.neering.cl/supervisor/operadora/listar?page=2" rel="next">&raquo;</a></li>
+            </ul>
+
+      </div>
+</div>
+    </div>
+  </div>
+</section>
+    </div><!-- /.content-wrapper -->
+
+
+    <div class="control-sidebar-bg"> control</div>
+    </div><!-- ./wrapper -->
+
+    <!-- jQuery 2.1.4 -->
+    <script src="https://smartcompany.neering.cl/js/jquery.min.js"></script>
+
+    <!-- jQuery UI 1.11.4 -->
+    <script src="https://smartcompany.neering.cl/js/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    <!-- Bootstrap 3.3.5 -->
+    <script src="https://smartcompany.neering.cl/js/bootstrap.min.js"></script>
+
+
+    <!-- daterangepicker -->
+    <script src="https://smartcompany.neering.cl/js/moment.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="https://smartcompany.neering.cl/js/app.min.js"></script>
+
+    <script src="https://smartcompany.neering.cl/js/jquery.timepicker.js"></script>
+
+    <script src="https://smartcompany.neering.cl/js/noty/packaged/jquery.noty.packaged.min.js"></script>
+
+    <script src="https://smartcompany.neering.cl/js/jquery.tablesorter.js"></script>
+
+
+    <script src="https://smartcompany.neering.cl/js/alasql.min.js"></script>
+    <script src="https://smartcompany.neering.cl/js/xlsx.core.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+    <script src="https://smartcompany.neering.cl/js/tabla.js"></script>
+
+    <script src="https://smartcompany.neering.cl/js/jquery.table2excel.min.js"></script>
+
+    <script src="https://smartcompany.neering.cl/js/nanobar.js"></script>
+
+    <script src="https://smartcompany.neering.cl/js/canvasloader-min.js"></script>
+
+    <script type="text/javascript" src="https://smartcompany.neering.cl/js/datatables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var notifyAjax401 = false;
+            var intervalNotifyAjaxBase = 2 * 60 * 1000;
+            var intervalNotifyAjax = intervalNotifyAjaxBase;
+
+            function notifyAjax() {
+                $.ajax({
+                        url: $('#baseurl').data('url') + '/gestion-notificaciones-ajax',
+                        method: 'GET',
+                        dataType: 'json',
+                    })
+                    .done(function(data) {
+                        $.each(data, function(k, v) {
+                            var n = noty({
+                                text: 'Debe volver a llamar al siguiente Deudor <a class="btn btn-default" href="' +
+                                    v + '"><b>Ir</b></a>',
+                                type: 'success'
+                            });
+                        });
+                        if (notifyAjax401) {
+                            notifyAjax401 = false;
+                            intervalNotifyAjax = intervalNotifyAjaxBase;
+                        }
+                    })
+                    .fail(function(error) {
+                        if (notifyAjax401 == false && error.status == 401) {
+                            notifyAjax401 = true;
+                            intervalNotifyAjax = 15 * 60 * 1000;
+                        }
+                    })
+                    .always(function() {
+                        setTimeout(notifyAjax, intervalNotifyAjax);
+                    });
+            }
+            notifyAjax();
+        });
+    </script>
+    <script src="https://smartcompany.neering.cl/js/restrict.js"></script>
+    <script>
+
+  $(".btn-ver-codigos").on("click",function() {
+    let operadora_id = $(this).data('operadora');
+    open(operadora_id);
+  });
+
+  $(document).ready(function(){
+    $("#buscar").on('click', function(){
+      $("#body").find("tr").remove();
+      //e.preventDefault();
+        var nombre = $("#nombre").val();
+       
+        
+        $.ajax({
+          url:'../operadora/buscar',
+          method: 'GET',
+          dataType:'json',
+          data:{nombre:nombre}
+        })
+        .done(function(response){
+
+          console.log("hola");
+          console.log(response);
+          $.each(response,function(){
+            
+            $.each(this,function(k,v){
+
+              var html="<tr><td>"+v.nombre+"</td><td><a href="+$('#baseurl').data('url')+"/supervisor/operadora/editar/"+v.id+"><i class='fa fa-eye'>Detalles</a></td></tr>";
+              $("#body").append(html);
+              
+            });  
+          });
+          
+        });
+    });
+  });
+</script>
+    <script src="https://smartcompany.neering.cl/plugins/toastr/toastr.min.js"></script>
+<script>
+
+// Para guardar clientes
+var userClients = [];
+
+/**
+ * Recupera los clientes disponibles para asociar
+ */
+function clients(callback) {
+	if (userClients.length == 0) {
+		$.ajax({
+			type: "GET",
+			url: "https://smartcompany.neering.cl/administracion/codigos-operadoras/clients",
+			data: {
+				_token: $("meta[name=csrf-token]").attr('content'),
+			},
+			dataType: "json",
+			success: function (clients) {
+				let html = '';
+				$("#form-codigos-operadora .modal-body").html('');
+				$.each(clients, function (i,v) {
+					userClients.push(this);
+					html += '<div class="form-group container-fluid"><div class="row form-flex align-items-center">'+
+						'<label for="input-client-'+this.id+'" class="control-label col-md-3">'+this.nombre+'</label>'+
+						'<input type="number" class="form-control col-md-9 form-codigo" name="codigos['+this.id+']" id="input-client-'+this.id+'">'+
+					'</div></div>';
+				});
+				$("#form-codigos-operadora .modal-body").append(html);
+				$(".form-codigo").inputRestrict(/^[0-9]?[0-9]?[0-9]?$/);
+				callback();
+			},
+		});
+	} else {
+		callback();
+	}
+}
+
+/**
+ * Rehace el formulario de codigos
+ */
+function open(operadora_id) {
+	clients(function() {
+		$.ajax({
+			type: "GET",
+			url: "https://smartcompany.neering.cl/administracion/codigos-operadoras" + "/" + operadora_id,
+			data: {
+				_token: $("meta[name=csrf-token]").attr('content'),
+			},
+			dataType: "json",
+			success: function (operadora) {
+				if (operadora.hasOwnProperty("codigos")) {
+					$.each(operadora.codigos, function() {
+						$("#input-client-"+this.cliente_id).val(this.codigo);
+					});
+				}
+				$("#form-codigos-operadora").data("operadora", operadora_id);
+				$("#modal-codigos-operadora").modal("show");
+			},
+		});
+	});
+}
+
+$("#modal-codigos-operadora").on("hidden.bs.modal", function() {
+	$("#form-codigos-operadora").data("operadora", "");
+	$(".form-codigo").val("");
+});
+
+$(".btn-aceptar").on("click",function(){
+	let operadora_id = $("#form-codigos-operadora").data("operadora");
+	$("#form-codigos-operadora").attr("action","https://smartcompany.neering.cl/administracion/codigos-operadoras/"+operadora_id);
+});
+
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+
+</script>
+</body>
+
+<style>
+    @media (min-width: 768px) {
+        .navbar-nav>li>a {
+            padding-top: 11px;
+            padding-bottom: 0;
+        }
+    }
+
+    @media (min-width: 300px) {
+        .btn-salir {
+            width: 152px !important;
+            height: 40px !important;
+            background: #0D559D 0% 0% no-repeat padding-box !important;
+            color: white !important;
+            font: normal normal normal 16px/19px Rubik;
+            letter-spacing: 0px;
+            color: #FFFFFF;
+        }
+
+        .custom-btn {
+            display: inline-block;
+            padding: 6px 12px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: 400;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+        }
+
+        .main-sidebar,
+        .left-side {
+            padding-top: 0px;
+        }
+
+        .centrar {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .copy {
+            left: 45px;
+            width: 125px;
+            height: 22px;
+            margin-top: 22px;
+            position: absolute;
+        }
+
+        .main-header>.navbar {
+            -webkit-transition: margin-left 0.3s ease-in-out;
+            -o-transition: margin-left 0.3s ease-in-out;
+            transition: margin-left 0.3s ease-in-out;
+            margin-bottom: 0;
+            margin-left: 216px;
+            border: none;
+            min-height: 40px;
+            border-radius: 0;
+        }
+
+        .skin-red-light .treeview-menu>li>a {
+            word-break: break-word;
+            white-space: normal;
+        }
+
+        .skin-red-light .treeview-menu>li.active>a,
+        .skin-red-light .treeview-menu>li>a:hover {
+            color: white !important;
+            opacity: 1;
+            word-break: break-word;
+            white-space: normal;
+        }
+
+        #titulo-header {
+            color: black;
+            padding-top: 11px;
+            position: absolute;
+        }
+
+        .sidebar {
+            padding-top: 0px;
+            height: 100%;
+            padding: 0;
+        }
+
+        .skin-red-light .main-sidebar {
+            margin-right: 1px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            background: #063A6E;
+        }
+
+        .sidebar-menu {
+            overflow-y: scroll;
+            padding-bottom: 61px
+        }
+
+        .sidebar-menu::-webkit-scrollbar {
+            display: none;
+            -ms-overflow-style: none;
+        }
+
+        .sidebar-menu:hover {
+            overflow-y: scroll;
+        }
+
+
+        .skin-red-light .main-sidebar::-webkit-scrollbar {
+
+            display: none;
+            -ms-overflow-style: none;
+        }
+
+
+        .foot-sidebar {
+            z-index: 999;
+            left: 0;
+            width: 216px;
+            height: 61px;
+            right: 0px;
+            bottom: 0px;
+            background: #0D559D;
+            position: fixed;
+        }
+
+        .content-wrapper,
+        .right-side,
+        .main-footer {
+            margin-left: 216px;
+
+        }
+
+        .main-sidebar,
+        .left-side {
+            width: 216px;
+        }
+    }
+</style>
+
+</html>

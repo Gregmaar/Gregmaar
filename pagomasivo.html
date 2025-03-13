@@ -1,0 +1,645 @@
+
+<!DOCTYPE html> pagos masivos
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="csrf-token" content="H8hFwsPppChdyo32g03h4U6vcYJrYsXxwFpfkBeu">
+    <title>SmartCompany - Pago Masivo</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="icon" type="image/x-icon" href="https://smartcompany.neering.cl/favicon.png" />
+    <!-- Bootstrap 3.3.5 -->
+    <link media="all" type="text/css" rel="stylesheet" href="https://smartcompany.neering.cl/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://smartcompany.neering.cl/css/jquery-ui.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://smartcompany.neering.cl/css/font-awesome.min.css">
+    <!-- Ionicons -->
+
+    <link rel="stylesheet" href="https://smartcompany.neering.cl/css/Rubik.css">
+
+    <link rel="stylesheet" href="https://smartcompany.neering.cl/css/ionicons.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="https://smartcompany.neering.cl/css/datatables.min.css" />
+    <!-- Theme style -->
+    <link media="all" type="text/css" rel="stylesheet" href="https://smartcompany.neering.cl/css/AdminLTE.min.css">
+
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link media="all" type="text/css" rel="stylesheet" href="https://smartcompany.neering.cl/css/skin-red-light.min.css">
+
+    <link media="all" type="text/css" rel="stylesheet" href="https://smartcompany.neering.cl/css/fullcob.css">
+
+    <link media="all" type="text/css" rel="stylesheet" href="https://smartcompany.neering.cl/css/jquery.timepicker.css">
+
+    <link media="all" type="text/css" rel="stylesheet" href="https://smartcompany.neering.cl/css/nanobar.css">
+
+    <link media="all" type="text/css" rel="stylesheet" href="https://smartcompany.neering.cl/css/canvasloader.css">
+
+      <link media="all" type="text/css" rel="stylesheet" href="https://smartcompany.neering.cl/css/select2.min.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="hold-transition skin-red-light sidebar-mini">
+
+    
+    <div id="baseurl" data-url="https://smartcompany.neering.cl" style="display:none;"></div>
+    <div class="wrapper" style="background-color: white;">
+        <header class="main-header">
+            <nav class="navbar navbar-static-top" role="navigation">
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- Messages: style can be found in dropdown.less-->
+
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <img src="https://smartcompany.neering.cl/img/usuario.svg "
+                            style="margin-right:14px; width: 26px; top: 9px;height: 26px;">
+                        <span class=""
+                            style="width: 143px; height: 19px; margin-right:60px; top:11px; font: normal normal normal 16px/14px Rubik; letter-spacing: 0px; font-weight: bolder;">
+                            Gonzalo Monroy
+                        </span>
+                        
+                        <a href="https://smartcompany.neering.cl/logout" class="btn btn-salir"
+                            style="width: 152px !important; height: 40px !important; background: #0D559D; color: white; border: 0; border-radius: 0px;">Salir</a>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside id="main-sidebar" class="main-sidebar" style="height:100%;;">
+                    <section class="sidebar" style="background-color: #063a6e;">
+    
+    
+    <style>
+        .logo-lg {
+            top: 39px;
+            margin-left: 56px;
+            size: auto;
+            max-width: 104px;
+            max-height: 100px;
+        }
+
+        .logo-custom {
+            padding-top: 20px;
+            height: 140px !important;
+            width: 116px !important;
+        }
+
+        .fa-angle-left:active {}
+
+        .skin-red-light .sidebar-menu>li>a,
+        .skin-red-light .sidebar-menu>li>a {
+            height: 40px;
+            word-break: break-word;
+            white-space: normal;
+        }
+    </style>
+    
+
+    <ul class="sidebar-menu" style="height: 100%">
+        
+        <div class="logo-custom">
+            <span class="logo-lg hidden-xs"><img src="https://smartcompany.neering.cl/img/New-logo.png"></span>
+        </div>
+        
+        <li class="active treeview">
+            <a href="https://smartcompany.neering.cl">
+                <span>Inicio</span></i>
+            </a>
+        </li>
+        
+                    <li class="treeview">
+                <a href="#">
+                    <span>Gestión de Agentes</span>
+                    <i class="fa fa-angle-left pull-right " style="margin-right: 5px;"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li id="agend"><a href="https://smartcompany.neering.cl/gestion/agendamientos"> Agendamientos y compromisos del
+                            día</a></li>
+                    <li><a href="https://smartcompany.neering.cl/gestion/agendamientos-fecha"> Agendamientos por Fecha</a></li>
+                    <li><a href="https://smartcompany.neering.cl/gestion/gestion-campanas"> Gestión de Campañas</a></li>
+                    <li><a href="https://smartcompany.neering.cl/gestion/gestion-campanas/gestion-especifica"> Gestión Específica</a></li>
+                                            
+                        <li><a href="https://smartcompany.neering.cl/gestion/listar"> Listado de Gestiones</a></li>
+                                    </ul>
+            </li>
+                
+        <li class="treeview">
+            <a href="#">
+                                    <span>Consultas y Reportes</span>
+                                <i class="fa fa-angle-left pull-right" style="margin-right: 5px;"></i>
+            </a>
+            <ul class="treeview-menu">
+                
+                                    <li><a href="https://smartcompany.neering.cl/listar-compromisos-operadora/317"> Compromisos
+                            de Pago</a></li>
+                
+                 
+                    <li class="treeview">
+                         
+                            <a href="#"><span>Reportes</span><i class="fa fa-angle-left pull-right"
+                                    style="margin-right: 5px;"></i></a>
+
+                            <ul class="treeview-menu">
+                                <li><a href="https://smartcompany.neering.cl/gestion/cliente-informe"> Campañas</a></li>
+
+                                                                    
+                                    <li><a href="https://smartcompany.neering.cl/gestion/cliente-informe-ult-gestion"> Campañas Ult. Gestión</a>
+                                    </li>
+                                    <li><a href="https://smartcompany.neering.cl/gestion/compromisos-ripley"> Compromisos por Fecha</a>
+                                    </li>
+                                
+                                                                    
+                                    <li><a href="https://smartcompany.neering.cl/gestion/informe-terreno"> Terreno</a></li>
+                                
+                                                                    
+                                    <li><a href="https://smartcompany.neering.cl/reporte-convenios"> Convenios y Compromisos</a></li>
+                                
+                                                                    
+                                    <li><a href="https://smartcompany.neering.cl/reporte-generico"> Genéricos</a></li>
+                                
+                            </ul>
+                                </li>
+        
+         
+            <li class="treeview">
+                                    
+                    <a href="#"><span>Informes</span><i class="fa fa-angle-left pull-right"
+                            style="margin-right: 5px;"></i></a>
+                    <ul class="treeview-menu">
+                        <li><a href="https://smartcompany.neering.cl/informe-recupero"> Recupero por Mes/Año</a></li>
+                        <li><a href="https://smartcompany.neering.cl/cliente-informe-gestiones"> Gestiones Mes/día</a></li>
+                        
+                    </ul>
+                
+
+        </li>
+        
+                    
+            <li class="treeview">
+                <a href="#"><span>Consultas</span><i class="fa fa-angle-left pull-right"
+                        style="margin-right: 5px;"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="https://smartcompany.neering.cl/consulta/gestion-especifica"> Específica</a></li>
+                    <li><a href="https://smartcompany.neering.cl/consulta/gestion-especifica-historico"> Específica (Histórico)</a></li>
+                </ul>
+            </li>
+            
+        
+    </ul>
+    </li>
+
+    
+            <li class="treeview">
+            <a href="#">
+                <span>Indicadores de Gestión</span>
+                <i class="fa fa-angle-left pull-right" style="margin-right: 5px;"></i>
+            </a>
+            <ul class="treeview-menu">
+                
+                <li><a href="https://smartcompany.neering.cl/indicadores/mes-campana-recupero"> Recupero Mes-Campaña</a></li>
+                <li><a href="https://smartcompany.neering.cl/indicadores/mes-ejecutiva-recupero"> Recupero Mes-Ejecutiva</a></li>
+                <li><a href="https://smartcompany.neering.cl/indicadores/mes-gestiones"> Gestiones del Mes</a></li>
+                <li class="treeview">
+                    <a href="#">
+                        <span>Gestiones-Ejecutiva</span>
+                        <i class="fa fa-angle-left pull-right" style="margin-right: 5px;"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="https://smartcompany.neering.cl/indicadores/diario-ejecutiva-gestiones"> Diario</a></li>
+                        <li><a href="https://smartcompany.neering.cl/indicadores/mes-ejecutiva-gestiones"> Mensual</a></li>
+                    </ul>
+                                    <li><a href="https://smartcompany.neering.cl/indicadores/llamadas-voz"> Llamadas de Voz</a></li>
+        </ul>
+    </li>
+
+    
+    <li class="treeview">
+        <a href="#">
+            <span>Campañas</span>
+            <i class="fa fa-angle-left pull-right" style="margin-right: 5px;"></i>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="https://smartcompany.neering.cl/campanas/guiones"> Mantener Guiones</a></li>
+            <li><a href="https://smartcompany.neering.cl/supervisor/campana-crear"> Crear Campaña</a> </li>
+            <li><a href="https://smartcompany.neering.cl/supervisor/reasignar-campana"> Reasignar Campaña</a></li>
+
+                            <li><a href="https://smartcompany.neering.cl/administracion/campana-reasignar-masivo"> Reasignar Campaña Masivo</a></li>
+                <li><a href="https://smartcompany.neering.cl/campanas/desactivar"> Desactivar Campaña</a> </li>
+                    </ul>
+    </li>
+    <li class="treeview">
+        <a href="#">
+            <span>Pagos</span>
+            <i class="fa fa-angle-left pull-right" style="margin-right: 5px;"></i>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="https://smartcompany.neering.cl/pagos/pago-individual">Pago Individual</a></li>
+            <li><a href="https://smartcompany.neering.cl/pagos/pago-masivo">Pago Masivo</a></li>
+            <li><a href="https://smartcompany.neering.cl/pagos/pagos-por-fecha">Reporte por Fecha</a></li>
+        </ul>
+    </li>
+    
+    <li class="treeview">
+        <a href="#">
+            <span>Metas</span>
+            <i class="fa fa-angle-left pull-right" style="margin-right: 5px;"></i>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="https://smartcompany.neering.cl/metas/establecer-meta">Establecer Meta</a></li>
+        </ul>
+    </li>
+
+
+
+    <li class="treeview">
+        <a href="#">
+            <span>Administración</span>
+            <i class="fa fa-angle-left pull-right" style="margin-right: 5px;"></i>
+        </a>
+        <ul class="treeview-menu">
+                            
+                <li class="treeview">
+                    <a href="#"><span>Carga</span><i class="fa fa-angle-left pull-right"
+                            style="margin-right: 5px;"></i></a>
+                    <ul class="treeview-menu">
+                        <li><a href="https://smartcompany.neering.cl/administracion/carga-generica"> Carga Generica</a></li>
+                        <li><a href="https://smartcompany.neering.cl/administracion/carga-masiva"> Masiva</a></li>
+                        <li><a href="https://smartcompany.neering.cl/administracion/carga-masiva-sin-cuotas"> Masiva Sin Cuotas</a>
+                        </li>
+                        <li><a href="https://smartcompany.neering.cl/administracion/carga-masiva-car"> Masiva CAR Ripley</a></li>
+                        <li><a href="https://smartcompany.neering.cl/administracion/carga-masiva-banco-ripley"> Masiva Banco Ripley</a></li>
+                        <li><a href="https://smartcompany.neering.cl/administracion/carga-vicidial"> Vicidial</a></li>
+                        
+                        <li><a href="https://smartcompany.neering.cl/administracion/carga-llamadas-voz"> LLamadas de Voz</a></li>
+                        <li><a href="https://smartcompany.neering.cl/administracion/carga-gestiones-sms"> Carga Gestiones SMS</a></li>
+                        <li><a href="https://smartcompany.neering.cl/administracion/carga-gestiones-mail"> Carga Gestiones Mail</a>
+                        </li>
+                        <li><a href="https://smartcompany.neering.cl/administracion/carga-telefonos-ripley"> Carga Teléfonos Ripley</a></li>
+                        <li><a href="https://smartcompany.neering.cl/administracion/carga-direcciones-ripley"> Carga Direcciones Ripley</a></li>
+                        <li><a href="https://smartcompany.neering.cl/administracion/carga-judicial-asignaciones"> Carga Judicial
+                                Asignaciones</a></li>
+                        <li><a href="https://smartcompany.neering.cl/administracion/inyeccion-gestiones">Inyección de Gestiones</a>
+                        </li>
+                        <li><a href="https://smartcompany.neering.cl/administracion/gestiones-robot"> Gestiones Robot</a></li>
+                        <li><a href="https://smartcompany.neering.cl/supervisor/inhibicion-deudor"> Inhibición Deudor</a></li>
+                        <li><a href="https://smartcompany.neering.cl/administracion/arboles-gestiones"> Carga arboles </a></li>
+                    </ul>
+                </li>
+                                        <li class="treeview">
+                    <a href="#"><span>Descargar</span><i class="fa fa-angle-left pull-right"
+                            style="margin-right: 5px;"></i></a>
+                    <ul class="treeview-menu">
+                        <li><a href="https://smartcompany.neering.cl/administracion/ripley"> Ripley 600-200</a></li>
+                        <li><a href="https://smartcompany.neering.cl/administracion/lista-vicidial"> Lista Vicidial</a></li>
+                        <li><a href="https://smartcompany.neering.cl/administracion/consolidados-gestiones"> Consolidado de Gestiones</a></li>
+                        <li><a href="https://smartcompany.neering.cl/reporte-gestiones-robot"> Gestiones Robot</a></li>
+                        
+                    </ul>
+                </li>
+            
+            <li class="treeview">
+                <a href="#"><span>Asignar</span><i class="fa fa-angle-left pull-right"
+                        style="margin-right: 5px;"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="https://smartcompany.neering.cl/supervisor/asignar-cobrador-terreno"> Cobrador en Terreno</a></li>
+                    <li><a href="https://smartcompany.neering.cl/supervisor/asignar-cobrador-masivo"> Cobrador en Terreno
+                            Masivo</a></li>
+                </ul>
+            </li>
+
+                            
+                <li class="treeview">
+                    <a href="#"><span>Reasignar</span><i class="fa fa-angle-left pull-right"
+                            style="margin-right: 5px;"></i></a>
+                    <ul class="treeview-menu">
+                        <li><a href="https://smartcompany.neering.cl/supervisor/reasignar-operadora"> Operadora</a></li>
+                        <li><a href="https://smartcompany.neering.cl/supervisor/reasignar-operadora-masivo"> Operadora Masivo</a>
+                        </li>
+                    </ul>
+                </li>
+                        <li><a href="https://smartcompany.neering.cl/guiones"> Guiones</a></li>
+            <li><a href="https://smartcompany.neering.cl/supervisor/cliente/listar"> Clientes</a></li>
+            <li><a href="https://smartcompany.neering.cl/supervisor/operadora/listar"> Operadora</a></li>
+            <li><a href="https://smartcompany.neering.cl/supervisor/cobrador/listar"> Cobrador</a></li>
+                            <li><a href="https://smartcompany.neering.cl/administracion/gestion-canal"> Gestión por canal</a></li>
+                <li><a href="https://smartcompany.neering.cl/administracion/telefonos-bloqueados"> Teléfonos Bloqueados</a></li>
+                <li><a href="https://smartcompany.neering.cl/administracion/inhibiciones"> Inhibiciones</a></li>
+                <li><a href="https://smartcompany.neering.cl/calculo-comisiones"> Calculo decomisiones</a></li>
+                <li><a href="https://smartcompany.neering.cl/administracion-ofertas"> Módulo Ofertas</a></li>
+            
+
+            
+            
+        </ul>
+    </li>
+            </ul>
+
+</section>
+
+                            
+        <!-- /.sidebar -->
+        <div>
+            <footer class="foot-sidebar" style="      right: 0px; bottom: 0px; position:fixed">
+                <img src="https://smartcompany.neering.cl/img/copy.png" class="copy" alt="User Image">
+            </footer>
+        </div>
+    </aside>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+          <!--section class="content-header">
+          <h1>
+            Pago Masivo
+          </h1>
+        </section-->
+  <section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+          <div class="box box-danger box-solid">
+              <div class="box-header">
+                <h3 class="box-title">Pago Masivo</h3>
+              </div>
+              <div class="box-body">
+        </div><!-- /.box-header -->
+        <form method="POST" class="form-horizontal" action="https://smartcompany.neering.cl/pagos/pago-masivo" enctype="multipart/form-data">
+          <div class="form-group">
+            <div class="box-body">
+            
+              <div class="col-sm-10">
+                <label for="cliente" class=" control-label">Cliente:</label>
+                <select class="form-control " id="cliente" name="cliente">
+                  <option value="0" selected>Seleccione Cliente</option>
+                        
+                                    <option value="1">CAR (RIPLEY)</option>
+                                    <option value="2">PARQUE DEL RECUERDO</option>
+                                    <option value="3">BANCO RIPLEY</option>
+                                    <option value="4">CEVSA</option>
+                                    <option value="5">ORIENCOOP</option>
+                                    <option value="6">MUNDO PACIFICO</option>
+                                    <option value="7">AUTOPISTA VALLES DEL BIO BIO</option>
+                                    <option value="8">TARJETA CORONA</option>
+                                    <option value="9">AUTOPISTA COSTA ARAUCO </option>
+                                    <option value="10">AUTOPISTA VESPUCIO NORTE</option>
+                                    <option value="11">Ripley renegociación</option>
+                                  </select>
+              
+              
+                <label for="file" class="control-label">Cargar Pagos:</label>
+                <input type="file" class="btn btn-default" name="file" id="file" required>
+              </div>
+            </div>
+          </div>  
+          <div class="form-group">
+            <div class="col-sm-10">
+          <input name="_token" type="hidden" value="H8hFwsPppChdyo32g03h4U6vcYJrYsXxwFpfkBeu">
+          <input class="btn btn-primary pull-right" type="submit" id="agregar" value="Cargar Datos">
+        </div>
+        </div>
+        </form>
+      </div></div>
+    </div>
+    </div>
+  </div>
+</section>
+    </div><!-- /.content-wrapper -->
+
+
+    <div class="control-sidebar-bg"> control</div>
+    </div><!-- ./wrapper -->
+
+    <!-- jQuery 2.1.4 -->
+    <script src="https://smartcompany.neering.cl/js/jquery.min.js"></script>
+
+    <!-- jQuery UI 1.11.4 -->
+    <script src="https://smartcompany.neering.cl/js/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    <!-- Bootstrap 3.3.5 -->
+    <script src="https://smartcompany.neering.cl/js/bootstrap.min.js"></script>
+
+
+    <!-- daterangepicker -->
+    <script src="https://smartcompany.neering.cl/js/moment.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="https://smartcompany.neering.cl/js/app.min.js"></script>
+
+    <script src="https://smartcompany.neering.cl/js/jquery.timepicker.js"></script>
+
+    <script src="https://smartcompany.neering.cl/js/noty/packaged/jquery.noty.packaged.min.js"></script>
+
+    <script src="https://smartcompany.neering.cl/js/jquery.tablesorter.js"></script>
+
+
+    <script src="https://smartcompany.neering.cl/js/alasql.min.js"></script>
+    <script src="https://smartcompany.neering.cl/js/xlsx.core.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+    <script src="https://smartcompany.neering.cl/js/tabla.js"></script>
+
+    <script src="https://smartcompany.neering.cl/js/jquery.table2excel.min.js"></script>
+
+    <script src="https://smartcompany.neering.cl/js/nanobar.js"></script>
+
+    <script src="https://smartcompany.neering.cl/js/canvasloader-min.js"></script>
+
+    <script type="text/javascript" src="https://smartcompany.neering.cl/js/datatables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var notifyAjax401 = false;
+            var intervalNotifyAjaxBase = 2 * 60 * 1000;
+            var intervalNotifyAjax = intervalNotifyAjaxBase;
+
+            function notifyAjax() {
+                $.ajax({
+                        url: $('#baseurl').data('url') + '/gestion-notificaciones-ajax',
+                        method: 'GET',
+                        dataType: 'json',
+                    })
+                    .done(function(data) {
+                        $.each(data, function(k, v) {
+                            var n = noty({
+                                text: 'Debe volver a llamar al siguiente Deudor <a class="btn btn-default" href="' +
+                                    v + '"><b>Ir</b></a>',
+                                type: 'success'
+                            });
+                        });
+                        if (notifyAjax401) {
+                            notifyAjax401 = false;
+                            intervalNotifyAjax = intervalNotifyAjaxBase;
+                        }
+                    })
+                    .fail(function(error) {
+                        if (notifyAjax401 == false && error.status == 401) {
+                            notifyAjax401 = true;
+                            intervalNotifyAjax = 15 * 60 * 1000;
+                        }
+                    })
+                    .always(function() {
+                        setTimeout(notifyAjax, intervalNotifyAjax);
+                    });
+            }
+            notifyAjax();
+        });
+    </script>
+    <script src="https://smartcompany.neering.cl/js/restrict.js"></script>
+    <script>
+$('#agregar').click(function(){
+  if($("#cliente").val()==0){
+        alert("Debe seleccionar un Cliente.");
+        return false;
+      }
+    });
+</script>
+    </body>
+
+<style>
+    @media (min-width: 768px) {
+        .navbar-nav>li>a {
+            padding-top: 11px;
+            padding-bottom: 0;
+        }
+    }
+
+    @media (min-width: 300px) {
+        .btn-salir {
+            width: 152px !important;
+            height: 40px !important;
+            background: #0D559D 0% 0% no-repeat padding-box !important;
+            color: white !important;
+            font: normal normal normal 16px/19px Rubik;
+            letter-spacing: 0px;
+            color: #FFFFFF;
+        }
+
+        .custom-btn {
+            display: inline-block;
+            padding: 6px 12px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: 400;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+        }
+
+        .main-sidebar,
+        .left-side {
+            padding-top: 0px;
+        }
+
+        .centrar {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .copy {
+            left: 45px;
+            width: 125px;
+            height: 22px;
+            margin-top: 22px;
+            position: absolute;
+        }
+
+        .main-header>.navbar {
+            -webkit-transition: margin-left 0.3s ease-in-out;
+            -o-transition: margin-left 0.3s ease-in-out;
+            transition: margin-left 0.3s ease-in-out;
+            margin-bottom: 0;
+            margin-left: 216px;
+            border: none;
+            min-height: 40px;
+            border-radius: 0;
+        }
+
+        .skin-red-light .treeview-menu>li>a {
+            word-break: break-word;
+            white-space: normal;
+        }
+
+        .skin-red-light .treeview-menu>li.active>a,
+        .skin-red-light .treeview-menu>li>a:hover {
+            color: white !important;
+            opacity: 1;
+            word-break: break-word;
+            white-space: normal;
+        }
+
+        #titulo-header {
+            color: black;
+            padding-top: 11px;
+            position: absolute;
+        }
+
+        .sidebar {
+            padding-top: 0px;
+            height: 100%;
+            padding: 0;
+        }
+
+        .skin-red-light .main-sidebar {
+            margin-right: 1px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            background: #063A6E;
+        }
+
+        .sidebar-menu {
+            overflow-y: scroll;
+            padding-bottom: 61px
+        }
+
+        .sidebar-menu::-webkit-scrollbar {
+            display: none;
+            -ms-overflow-style: none;
+        }
+
+        .sidebar-menu:hover {
+            overflow-y: scroll;
+        }
+
+
+        .skin-red-light .main-sidebar::-webkit-scrollbar {
+
+            display: none;
+            -ms-overflow-style: none;
+        }
+
+
+        .foot-sidebar {
+            z-index: 999;
+            left: 0;
+            width: 216px;
+            height: 61px;
+            right: 0px;
+            bottom: 0px;
+            background: #0D559D;
+            position: fixed;
+        }
+
+        .content-wrapper,
+        .right-side,
+        .main-footer {
+            margin-left: 216px;
+
+        }
+
+        .main-sidebar,
+        .left-side {
+            width: 216px;
+        }
+    }
+</style>
+
+</html>

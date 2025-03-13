@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="https://smartcompany.neering.cl/favicon.png" />
+    <title>SistemaIntegralCobranza</title>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://smartcompany.neering.cl/css/Rubik.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    
+
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+        .centrar{
+            margin-left: auto; margin-right: auto;
+        }
+        body {
+            font-family: 'Rubik';
+            background: url('https://smartcompany.neering.cl/img/new-BG.png') no-repeat center top;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+        }
+
+
+        .boton-primary{
+            background: #a353b6 !important;
+            color:white;
+            align-items: center;
+            opacity: 1 !important;
+        }
+
+        .boton-primary:hover{
+           
+            background: #902CA8 !important;
+            color:white;
+            align-items: center;
+            opacity: 1 !important;
+        }
+        
+        .boton-secondary{
+            color:white;
+            background: #999999 !important; 
+        }
+        .boton-info{
+            color:white;
+            background: #3E3E3F !important;
+        }
+        .boton-danger{
+            color:white;
+            background: #FDAC2A !important;
+        }
+        .boton-success{
+            color:white;
+            background: #969393 !important;
+        }
+        .boton-warning{
+            color:white;
+            background: orange !important;
+        }
+        .boton-third{
+            color:white;
+            background: green !important;
+        }
+        .fa-btn {
+            margin-right: 6px;
+        }
+        #app-layout{
+            background-size:cover;
+            z-index: 0;
+            position: relative;
+            padding: 0px;
+        }
+        .transparent{
+            background-color:    #FFFFFF !important;
+            opacity: 0.73 !important; 
+        }
+        .blue-transparent{
+            background-color: #063a6e !important;
+            opacity: 1 !important; 
+            color:white !important;
+            border:none;
+            
+        }
+        .new-form-control{
+            opacity: 1 !important;
+            background-color:    #FFFFFF !important;
+        }
+
+
+        .new-input{
+            /* background-color:rgba(0,0,0,0.1); */
+            background-color:white;
+            border:0;
+            border-bottom:1px solid white;
+            box-shadow:none;
+            border-radius:0px;
+            color:white;
+        }
+        .new-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: white;
+        opacity: 0.6;
+        }
+
+        .new-input :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: white;
+        opacity: 0.6;
+        }
+
+        .new-input ::-ms-input-placeholder { /* Microsoft Edge */
+        color: white;
+        opacity: 0.6;
+        }
+        #degrade{
+            max-width: 100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(37,44,55,1) 0%, rgba(76,172,217,0.6) 100%);
+            position: absolute;
+            z-index: 0;
+        }
+        .material{
+            background-image: linear-gradient(#063A6E, #063A6E), linear-gradient(#d9d9d9, #d9d9d9);
+            border: 0 none;
+            border-radius: 0;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            float: none;
+        }
+        .navbar-default {
+            border: none !important;
+        }
+        .between{
+            display: flex;
+            justify-content: space-between;
+        }
+        .redondo {
+            border-radius: 60px;
+        }
+
+
+         
+        @supports(object-fit: cover){
+            #app-layout{
+                object-fit: cover;
+                object-position: center center;
+            }
+
+}
+    </style>
+</head>
+<body id="app-layout">
+    
+
+            <style>
+        .login-form {
+            width: 383px;
+        }
+
+        .hr-custom {
+            width: 37px;
+            margin-left: 0px;
+            border-top: 4px solid #FDAC2A;
+        }
+
+        .titulo-login {
+            margin-top: 0px;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        .form-body {
+            height: 290px;
+            margin-left: 45px;
+            margin-right: 45px;
+            padding-top: 30px;
+        }
+
+
+        .panel-body{
+            /* Hace el fondo del cuerpo */
+            border: 0px solid transparent;
+            background:rgba(255, 255, 255, 0.7);
+            padding: 0%;
+        }
+        .panel {
+            border: 0px solid transparent;
+            opacity: 0.83 !important;
+        }
+
+        .alert {
+            padding: 0px;
+            margin-bottom: 0px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            background: #F74C4C 0% 0% no-repeat padding-box;
+            color: white
+        }
+        input[type="checkbox"]{
+            border-radius: 60px;
+        }
+
+    </style>
+    <div class="container">
+        <div class="login-form centrar">
+            <div id="panel" class="">
+                
+                <div class="panel-heading blue-transparent centrar" style="height: 121px;">
+                    <div class="titulo-login">
+                        <div class="col">
+                            <div
+                                style="font: normal normal 300 16px/44px Rubik; text-align: left; opacity: 1; letter-spacing: 1.6px;">
+                                INGRESO
+                            </div>
+                            <div
+                                style="font: normal normal bold 18px/26px Rubik; letter-spacing: 0px; letter-spacing: 0px;">
+                                SISTEMA INTEGRAL DE COBRANZA
+                            </div>
+                        </div>
+                        <hr class="hr-custom">
+                    </div>
+
+                </div>
+                
+                <div class="panel-body">
+                    <div class="form-body ">
+                        <form role="form" method="POST" action="https://smartcompany.neering.cl/login_usuario"
+                            onsubmit="$('#panel').toggle();$('#loader').toggle();">
+                            <input type="hidden" name="_token" value="13MxyNz267b5r5AOUp8XjEXmjiVEntWXs4r5RHbe">
+
+                            <div class="form-group">
+                                <div class="col">
+                                    <label class="col-12" style="color:#3E3E3F;">Usuario</label>
+
+                                    <div class="col-12">
+                                        <input type="text" class="form-control new-form-control redondo " style="" name="username"
+                                            value="" placeholder="Ingresar usuario">
+
+                                                                            </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-12" style="color:#3E3E3F;">Contraseña</label>
+
+                                <div class="col-12">
+                                    <input type="password" class="form-control new-form-control redondo" name="password"
+                                        placeholder="Ingresar contraseña">
+
+                                                                    </div>
+                            </div>
+                            
+                            
+                            <div class="form-group">
+                                <div class="text-right">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="remember"> Recuérdame
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="between">
+                                    <a class="btn text-right" style="color:#3E3E3F"
+                                        href="https://smartcompany.neering.cl/password/reset">¿Olvidó
+                                        su contraseña?</a>
+                                    <button type="submit" class="btn boton-primary redondo" style="width: 96px; ">
+                                        <span>Ingresar</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div id="loader" class="box-body" style="display: none; margin-top: 50px; margin-left: 60px;">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div id="canvasloader-container" class="wrapperloader"></div>
+
+                    </div>
+                    <h3 style="text-align: center; color: #3a91a8; margin-top:30px;"> Cargando Contenido...</h3>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <script src="https://smartcompany.neering.cl/js/canvasloader-min.js"></script>
+
+    <script type="text/javascript">
+        var cl = new CanvasLoader('canvasloader-container');
+        cl.setColor('#3a91a8'); // default is '#000000'
+        cl.setShape('spiral'); // default is 'oval'
+        cl.setDiameter(47); // default is 40
+        cl.setDensity(43); // default is 40
+        cl.show(); // Hidden by default
+
+        // This bit is only for positioning - not necessary
+        var loaderObj = document.getElementById("canvasLoader");
+        loaderObj.style.position = "absolute";
+        loaderObj.style["top"] = cl.getDiameter() * -0.5 + "px";
+        loaderObj.style["left"] = cl.getDiameter() * -0.5 + "px";
+    </script>
+    
+    <!-- JavaScripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    
+</body>
+</html>
